@@ -1,5 +1,5 @@
 # Writer-Identifier
-a project that uses ML to identify Writers from their hand writing using IAM dataset
+A project that uses ML to identify Writers from their hand writing using IAM dataset
 
 # Dataset
 if you download the IAM dataset 'data/formsA-D.tgz', download also 'data/xml.tgz' and do the following
