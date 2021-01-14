@@ -7,7 +7,7 @@ from skimage.exposure import histogram
  
 def cutLines(gray):
     edges = cv2.Canny(gray,90,100,apertureSize = 3)
-    minLineLength=100
+    minLineLength=55
     lines = cv2.HoughLinesP(image=edges,rho=1,theta=np.pi/180, threshold=100,lines=np.array([]), minLineLength=minLineLength,maxLineGap=0)
  
     linesNew=[ line[0][1] for line in lines if line[0][1]==line[0][3]]
@@ -40,7 +40,7 @@ def LBP (images, stride = 1):
     hist = np.zeros(256)
     for img in images:
         lbp = local_binary_pattern(img, 8, 1)   #‘default’, ‘ror’, ‘uniform’, ‘var’, nri_uniform
-        hist += np.asarray(histogram(lbp)).astype(int)
+        hist += np.asarray(histogram(lbp)[1]).astype(int)
     return hist
  
  
