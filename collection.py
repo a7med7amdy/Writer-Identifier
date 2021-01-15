@@ -22,18 +22,29 @@ def cutLines(gray):
 def lines_segments(image):
     gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     ret,thresh = cv2.threshold(gray,127,255,cv2.THRESH_BINARY_INV)
-    kernel = np.ones((5,100), np.uint8)
+    kernel = np.ones((10,200), np.uint8)
     img_dilation = cv2.dilate(thresh, kernel, iterations=1)
     ctrs, hier = cv2.findContours(img_dilation.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     sorted_ctrs = sorted(ctrs, key=lambda ctr: cv2.boundingRect(ctr)[0])
     images = []
+    flag=True
+    y1 = 10e5
+    y2 = -10e5 
+    height = 0 
     for i, ctr in enumerate(sorted_ctrs):
         x, y, w, h = cv2.boundingRect(ctr) 
-        roi = gray[y:y+h, x:x+w]
-        if(len(roi)>25 and y+h<x+w): #20 is thershold you can change this, this is for small lines and points, remove them from return images 
+        roi = image[y:y+h, x:x+w]
+        if(len(sum(roi))>200 and h>40): #20 is thershold you can change this, this is for small lines and points, remove them from return images 
             images.append(roi)
-            io.imsave(str(i)+'.png',roi)
-    # write
+            y2=max(y2,y+h)
+            y1=min(y1,y) 
+            
+            #io.imsave(str(i)+'.png',roi)
+    #--UnComment-- in case you want to return the whole  image not just lines 
+    #if(y2>0):
+    #    croped = gray[y1:y2, ::]
+    #else:
+    #   croped = gray
     return images
  
 def LBP (images, stride = 1):
