@@ -33,7 +33,7 @@ def lines_segments(image):
     height = 0 
     for i, ctr in enumerate(sorted_ctrs):
         x, y, w, h = cv2.boundingRect(ctr) 
-        roi = image[y:y+h, x:x+w]
+        roi = gray[y:y+h, x:x+w]
         if(len(sum(roi))>200 and h>40): #20 is thershold you can change this, this is for small lines and points, remove them from return images 
             images.append(roi)
             y2=max(y2,y+h)
