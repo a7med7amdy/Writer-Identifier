@@ -62,8 +62,8 @@ it takes this shape
  # How to run the project
  • Preconditions
  
- 1- open the .ipynb in a new kernel and restart kernel before running it if you work with before.
+ 1- open the final.ipynb in a new kernel and restart kernel before running it if you work with before.
  
- 2- delete any reults.txt or time.txt files before running.
+ 2- delete any files with names "results.txt" and "time.txt" files before running.
  
  • open final.ipynb file, run the cells, and it'll ask you to enter the path to the dataset. write the path and it'll create new time and results files and then, it'll print the results on them by the end of the code.
