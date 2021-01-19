@@ -30,29 +30,33 @@ we've done our project using Jupyter notebook. if you haven't it, you can copy t
 # Dataset shape
 it takes this hirerachy
 
- Markup : • \data
-            – \01
-              ∗ \1
-                 · 1.png
-                 · 2.png
-              ∗ \2
-                 · 1.png
-                 · 2.png
-              ∗ \3
-                 · 1.png
-                 · 2.png
-              ∗ test.png
-            – \02
-              ∗ \1
-                 · 1.png
-                 · 2.png
-              ∗ \2
-                 · 1.png
-                 · 2.png
-              ∗ \3
-                 · 1.png
-                 · 2.png
-                 ∗ test.png
+• \data
+
+   – \01
+   
+     ∗ \1
+        · 1.png
+        · 2.png
+     ∗ \2
+        · 1.png
+        · 2.png
+     ∗ \3
+        · 1.png
+        · 2.png
+     ∗ test.png
+     
+   – \02
+   
+     ∗ \1
+        · 1.png
+        · 2.png
+     ∗ \2
+        · 1.png
+        · 2.png
+     ∗ \3
+        · 1.png
+        · 2.png
+        ∗ test.png
        
        
  # How to run the project
